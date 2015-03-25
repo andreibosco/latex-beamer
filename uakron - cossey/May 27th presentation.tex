@@ -1,0 +1,991 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{pictex}
+\usepackage{youngtab}
+\usepackage{young}
+\usepackage{verbatim}
+
+\newcommand \Z {\mathbb Z}
+\newcommand \Q {\mathbb Q}
+\newcommand \C {\mathbb C}
+\newcommand \R {\mathbb R}
+\newcommand \N {\mathbb N}
+\newcommand \F {\mathbb F}
+\newcommand \X {\mathcal{X}}
+\newcommand \Y {\mathcal{Y}}
+\newcommand \bpig {{\textup B}_{\pi}(G)}
+\newcommand \bpdg {{\textup B}_{p'}(G)}
+\newcommand \bpi {{\textup B}_{\pi}}
+\newcommand \ipi {{\textup I}_{\pi}}
+\newcommand \ipig {{\textup I}_{\pi}(G)}
+\newcommand \ipidg {{\textup I}_{\pi'}(G)}
+\newcommand \ipdg {{\textup I}_{p'}(G)}
+\newcommand \ipid {{\textup I}_{\pi'}}
+\newcommand \npig {{\textup N}_{\pi}(G)}
+\newcommand \npdg {{\textup N}_{p'}(G)}
+\newcommand \npi {{\textup N}_{\pi}}
+\newcommand \irr {\textup{Irr}}
+\newcommand \irrg {\textup{Irr}(G)}
+\newcommand \ibr {{\textup{IBr}}_p}
+\newcommand \ibrg {{\textup{IBr}}_p(G)}
+\newcommand \sbs {\subseteq}
+\newcommand \nnq {{\bf{N}}_N(Q)}
+\newcommand \ngw {{\bf{N}}_G(W)}
+\newcommand \nnp {{\bf{N}}_N(P)}
+\newcommand \nmq {{\bf{N}}_M(Q)}
+\newcommand \ngp {{\bf{N}}_G(P)}
+\newcommand \nnmq {{\bf{N}}_{NM}(Q)}
+\newcommand \nwq {{\bf{N}}_W(Q)}
+\newcommand \nuq {{\bf{N}}_U(Q)}
+\newcommand \ngq {{\bf{N}}_G(Q)}
+\newcommand \wt {\widetilde}
+\newcommand \dvd {\hbox {\big|}}
+\newcommand \ndvd {\hbox {/}\kern-5pt\dvd}
+\newcommand \nrml {\lhd}
+\def \< {\langle}
+\def \> {\rangle}
+
+\title{Introduction to Beamer and Graphics on LaTeX}
+\author{JP Cossey \\ University of Akron}
+\institute{Research Methods in Mathematics}
+\date{May 27, 2009}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Introduction to Beamer}
+
+\subsection{LaTeX $+$ Powerpoint = Beamer}
+
+\frame{
+
+\frametitle{What is Beamer?}
+
+Beamer is a version of LaTeX that allows you to make powerpoint-style presentations using standard LaTeX coding, with a few extra tweaks.
+
+\pause
+\bigskip
+
+Obviously what you're looking at now was done in Beamer.  Beamer outputs .pdf files that are displayed by, for instance, Adobe Reader.
+
+} 
+
+\frame{
+
+\frametitle{How do I get my hands on Beamer?}
+
+Beamer can be downloaded for free at:
+
+\begin{center}
+
+http://latex-beamer.sourceforge.net/
+
+\end{center}
+
+\pause
+\bigskip
+
+The directions linked on that page walk you through downloading and installing beamer in a relatively painless way.  (If I can do it, you can do it, I promise.)
+ 
+}
+
+\frame{
+
+\frametitle{Can I just steal your files?}
+
+Sure, feel free.  The LaTeX code for this presentation is available on my webpage at:
+
+\bigskip
+
+http://www.math.uakron.edu/~cossey  (look in the \lq \lq teaching" section)
+
+\bigskip
+\pause
+
+And these slides are available at that page as well. 
+
+}
+
+\frame{
+
+\frametitle{When should I use Beamer?}
+
+When in my math career could/should I use Beamer?
+
+\pause
+\bigskip
+
+\begin{itemize}
+
+\item \lq \lq chalk talk" versus Beamer
+
+\pause
+\bigskip
+
+\item Time constraints?
+
+\pause
+\bigskip
+
+\item Pictures?
+
+\pause
+\bigskip
+
+\item Culture
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Getting started}
+
+Be sure you begin the file with 
+
+$\backslash$documentclass$\{$beamer$\}$
+
+}
+\frame{
+
+\frametitle{How are you making these slides?}
+
+Each slide, or \lq \lq frame", begins with the command 
+
+\medskip
+
+$\backslash$frame$\{$ 
+
+and ends with 
+
+\medskip
+
+$\}$  
+
+\medskip
+
+In between the brackets is everything you want on that particular slide.
+
+\pause
+\bigskip
+
+You can give frames titles with the command $\backslash$frametitle$\{$\mbox{Put your title here}$\}$
+
+}
+
+\frame{
+
+\frametitle{For instance}
+
+The commands to make the next slide are:
+
+\medskip
+
+$\backslash$frame$\{$
+
+\medskip
+
+$\backslash$frametitle$\{$\mbox{Zippy is great...}$\}$
+
+\medskip
+
+...but Bucky the Badger rules!
+
+\medskip
+
+$\}$
+
+}
+
+\frame{
+
+\frametitle{Zippy is great...}
+
+...but Bucky the Badger rules!
+
+}
+
+\subsection{Title page, sections, and subsections}
+
+\frame{
+
+\frametitle{The title page}
+
+The command 
+
+\medskip
+
+$\backslash$frame$\{$titlepage$\}$
+\bigskip
+
+
+at the beginning of your file (right after $\backslash$begin$\{$document$\}$ )
+
+tells Beamer to set up your title page.
+
+\pause
+\bigskip
+
+Before the $\backslash$frame$\{$titlepage$\}$ 
+
+command, you could/should have things like:
+
+$\backslash$title$\{$...$\}$
+
+$\backslash$author$\{$...$\}$
+
+$\backslash$institution$\{$...$\}$
+
+$\backslash$date$\{$...$\}$
+
+
+}
+
+\frame{
+
+\frametitle{Sections and subsections}
+
+Notice the cool little section and subsection names at the top?  This is really easy to do.  You simply begin a section with the command 
+
+\bigskip
+
+$\backslash$section$\{$section \ name $\}$
+
+\bigskip
+
+and every frame after that command is included in that section.  Similarly with subsections.  These are automatically placed at the top of every slide, or perhaps somewhere else, depending on the beamer \lq \lq theme" you're using.
+
+}
+
+\subsection{Themes and color schemes}
+
+\frame{
+
+\frametitle{Beamer themes}
+
+There are different beamer \lq \lq themes" available.  The theme for this presentation is called \lq \lq split", meaning in the header of this file I have the command
+
+$\backslash$usepackage$\{$beamerthemesplit$\}$.
+
+Here is a talk I made using the theme \lq \lq berlin", i.e.
+
+$\backslash$usepackage$\{$beamerthemeberlin$\}$.
+
+}
+
+\frame{
+
+\frametitle{Color schemes}
+
+I'm currently using the default color them for beamer.  But there are other color packages available, such as 
+
+$\backslash$usecolortheme$\{$beaver$\}$,
+
+which is the one you saw in the other presentation.
+
+\pause
+
+\bigskip
+
+Most beamer packages come with all sorts of available color schemes and themes, and others can be downloaded.
+
+}
+
+\subsection{Text effects}
+
+\frame{
+
+\frametitle{Animating text}
+
+The \lq \lq pause" command allows you to reveal text one line at a time.  For instance, the command for the next slide is:
+
+\pause
+\bigskip
+
+Zippy is cool...
+
+$\backslash$pause
+
+$\backslash$bigskip
+
+But Bucky rules!
+
+$\backslash$pause
+
+$\backslash$bigskip
+
+Go Badgers!
+
+}
+
+\frame{
+
+\frametitle{Animating text: an example}
+
+Zippy is cool...
+
+\pause
+\bigskip
+
+But Bucky rules!
+
+\pause
+\bigskip
+
+Go Badgers!
+
+}
+
+\frame{
+
+\frametitle{Theorem type environments}
+
+Theorem and definition environments work the same in beamer as in regular LaTeX:
+
+$\backslash$begin$\{$theorem$\}$
+
+$\backslash$end$\{$theorem$\}$
+
+\pause
+\bigskip
+
+However, depending on what theme you're using, the result may appear different.
+
+}
+
+\frame{
+
+\frametitle{An example theorem}
+
+\begin{definition}  A Badger is defined to be one plus a Zip.
+\end{definition}
+
+\pause
+\bigskip
+
+\begin{theorem}  The Badgers are better than the Zips.
+
+\end{theorem}
+
+\begin{proof}  Obvious.
+
+\end{proof}
+
+\pause
+\bigskip
+
+Compare this to how theorems looked in the other presentation.
+
+}
+
+\section{Pictures in LaTeX}
+
+\frame{
+
+\frametitle{Picture = thousand words}
+
+Now we'll look at how to make pictures in LaTeX.  Later we'll see how to animate those pictures in beamer.
+
+\pause
+\bigskip
+
+There are essentially three ways to do graphics in LaTeX:  (1) macros, (2) drawing in LaTeX, and (3) importing pictures.
+
+}
+
+\subsection{Using macros for pictures}
+
+\frame{
+
+\frametitle{The easy/lazy approach}
+
+Perhaps the easiest way to make graphics in LaTeX is to let someone else do all the work, by just using a \lq \lq macro".
+
+\pause
+\bigskip
+
+For instance, suppose I was interested in partitions and Young diagrams \pause (wake up, Cory).
+
+}
+
+\frame{
+
+\frametitle{Empty Young diagrams}
+
+You can go online and download the packages \lq \lq young" and \lq \lq youngtab" and put them in your header as 
+
+$\backslash$usepackage$\{$young$\}$
+
+$\backslash$usepackage$\{$youngtab$\}$
+
+\pause
+\bigskip
+
+To make an empty Young diagram of shape (4, 3, 2):
+
+\$ \$ $\backslash$yng(4,3,2) \$ \$
+
+}
+
+\frame{
+
+\frametitle{Which gives you...}
+
+$$ \yng(4,3,2) $$
+}
+
+\frame{
+
+\frametitle{Young diagrams with numbers in the boxes}
+
+To put numbers in the boxes of your Young diagram (like, for instance, hook lengths), download and use the \lq \lq Young" macro.  For example, to get:
+
+\pause
+\bigskip
+
+$$\begin{Young}
+9 & 6 & 4 & 2 & 1\cr
+6 & 3 & 1 \cr
+4 & 1 \cr
+2 \cr
+1 \cr
+\end{Young}$$
+
+}
+
+\frame{
+
+\frametitle{Young diagrams with numbers in the boxes}
+
+Use the commands:
+
+\bigskip
+
+\$ \$ $\backslash$begin$\{$Young$\}$
+
+9 \& 6 \& 4 \& 2 \& 1 $\backslash$ cr
+
+6 \& 3 \& 1 $\backslash$ cr
+
+4 \& 1 $\backslash$ cr
+
+2 $\backslash$ cr
+
+1 $\backslash$ cr
+
+$\backslash$end$\{$Young$\}$
+
+\$ \$
+
+}
+
+\frame{
+
+\frametitle{Matrices}
+
+You might also often find yourself having to deal with matrices and/or column or row vectors \pause (Wake up, Courtney and Nick.)
+
+\pause
+\bigskip
+
+These are easy enough to do, using the \lq \lq array" environment, which does not need to be downloaded, it's already in LaTeX.
+
+\pause
+\bigskip
+
+For example, I made:
+
+$$\left( \begin{array}{cccc} 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \end{array} \right). $$
+
+}
+
+\frame{
+
+\frametitle{Making matrices}
+
+Using the commands:
+
+\$ \$ $\backslash$left( $\backslash$begin$\{$array$\} \{cccc\}$ 
+
+0 $\&$ 0 $\&$ 1 $\&$ 0 $\backslash\backslash$
+
+0 $\&$ 1 $\&$ 0 $\&$ 0 $\backslash\backslash$ 
+
+0 $\&$ 0 $\&$ 0 $\&$ 1 $\backslash\backslash$ 
+
+1 $\&$ 0 $\&$ 0 $\&$ 0 
+
+$\backslash$end$\{$array$\}$ $\backslash$right). \$ \$
+
+}
+
+\frame{
+
+\frametitle{Unpacking that last slide}
+
+The $\backslash$left(  tells LaTeX that you want a left parenthesis as big as the array (so it will look like a matrix).
+
+\pause
+\bigskip
+
+The $\{ cccc \}$ after the $\backslash$begin$\{$array$\}$ tells LaTeX you want four columns.
+
+\pause
+\bigskip
+
+The $\&$ tells LaTeX to go to the next column, and the $\backslash \backslash$ tells LaTeX to go to the next row.
+
+}
+ 
+\frame{
+
+\frametitle{Other macros}
+
+If (for some weird reason) you don't care about Young diagrams, there are dozens (if not hundreds) of other macros out there on the internet...
+
+\pause
+\begin{itemize}
+
+\item For curves
+
+\pause
+\bigskip
+
+\item For commutative diagrams
+
+\pause
+\bigskip
+
+\item For musical symbols !?!?
+
+\end{itemize}
+}
+
+\subsection{Drawing in LaTeX}
+
+\frame{
+
+\frametitle{The picture environment}
+
+There are also commands that allow you to draw pictures directly in LaTeX, in the \lq \lq picture" environment.
+
+\pause
+\bigskip
+
+In this environment, you \lq \lq place" lines, figures, and text within the picture environment according to a coordinate system.
+
+}
+
+\frame{
+
+\frametitle{Placing and sizing the picture}
+
+Begin with the command 
+
+\bigskip
+
+$\backslash$begin$\{$picture$\}$ (x,y)
+
+...picture commands...
+
+$\backslash$end$\{$picture$\}$
+
+\bigskip
+
+The (x,y) indicates the dimensions of the rectangle the picture will be the default units.
+}
+
+\frame{
+
+\frametitle{The \lq \lq put" command}
+
+Within the picture environment, you place objects (lines, circles, text, etc) using the \lq \lq put" command.
+
+\pause
+\bigskip
+
+$\backslash$put({\it{5.2, 3.4}})$\{$ {\mbox{Some text}} $\}$
+
+puts \lq \lq Some text" at the point (5.2, 3.4).
+
+\pause
+\bigskip
+
+$\backslash$put({\it{2.8, 1.6}})$\{$$\backslash${\mbox{line(1,2)}}$\{$3$\}$$\}$
+
+puts a line with slope $\frac{2}{1}$ and length $3$, beginning at the point $(2.8, 1.6)$.
+
+\pause
+\bigskip
+
+$\backslash$put({\it{1.0, 3.2}})$\{$$\backslash${\mbox{circle}}$\{$1.6$\}$$\}$
+
+puts a circle of diameter $1.6$ centered at $(1.0, 3.2)$.
+
+
+
+}
+
+\frame{
+
+\frametitle{A (barely) nontrivial drawing}
+
+\setlength{\unitlength}{1cm}
+
+\begin{picture}(7,7)
+
+\put(.8,6.1){$G$}
+
+\put(1,3){\line(0,1){3}}
+
+\put(.8,2.6){$N$}
+
+\put(.4,6.1){$\varphi$}
+
+\put(.4, 2.6){$\theta$}
+
+
+
+\put(4.8, 4.3){$\ngq$}
+\put(4.4, 4.3){$\tilde{\varphi}$}
+
+
+\put(2.6,5.2){$\ngp$}
+\put(2.6,1.7){$\nnp$} 
+\put(2.8,2.1){\line(0,1){3}}
+\put(1.2,2.6){\line(5,-3){1.1}}
+
+
+\put(3.85,5.2){$\varphi^{(\ngp)}$}
+
+\put(3.85,1.7){$\tilde{\theta}$}
+\end{picture}
+}
+
+
+\frame{
+
+\frametitle{Another, sillier, example}
+
+\begin{figure}[h]
+
+\begin{picture}(150, 150)
+
+\put(75,75){\circle{125}}
+\put(75,65){\oval(8, 3)[b]}
+
+\put(70,70){$\Delta$}
+
+\put(65,80){\circle{5}}
+\put(85,80){\circle{5}}
+
+\end{picture}
+
+\end{figure}
+
+}
+
+\subsection{Importing into LaTeX}
+
+\frame{
+
+\frametitle{How to draw figures in other programs}
+
+Usually I draw figures in the (free) program Open Office, and then import them into LaTeX using the graphicx package.
+
+\begin{itemize}
+
+\item  Make sure you have the graphicx package and the command 
+$\backslash$usepackage$\{$graphicx$\}$ in your header.
+
+\pause
+\bigskip
+
+\item  Draw your picture in Open Office or some other program, export it as an .eps file, and save it somewhere where your tex compiler can find it
+
+\pause
+\bigskip
+
+\item  Use the command $\backslash$includegraphics$\{$nameoffile.eps$\}$ to place the picture.
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{An example of an imported picture}
+
+Here's an example of an imported drawing:
+
+\begin{figure}[h]
+
+%\includegraphics[scale=.25]{groupsaregreat.eps}
+
+\end{figure}
+
+}
+
+\frame{
+
+\frametitle{Scaling}
+
+You can scale the picture (which is often necessary), for instance:
+
+$\backslash$includegraphics[scale=.2]$\{$groupsaregreat.eps$\}$ will scale the eps figure \lq \lq groupsaregreat" by a factor of .2.
+
+\begin{figure}[h]
+
+%\includegraphics[scale=.05]{groupsaregreat.eps}
+
+\end{figure}
+
+}
+
+\frame{
+
+\frametitle{Importing pictures}
+
+Sometimes you want to place a picture in LaTeX.  Although officially there are lots of ways to do this, I find the only way that works well with any consistency is to first import the picture into OpenOffice, manipulate it as needed there, and then export it as an .eps file.
+
+\pause
+\bigskip
+
+This may sacrifice some of the picture quality, but it makes it much easier to work with.
+
+}
+
+\frame{
+
+\frametitle{An imported picture}
+
+\begin{figure}[h]
+
+%\includegraphics[scale=1]{young1.eps}
+
+\end{figure}
+
+}
+
+\frame{
+
+\frametitle{An imported picture}
+
+\begin{figure}[h]
+
+%\includegraphics[scale=1]{young2.eps}
+
+\end{figure}
+
+}
+
+\section{Animating graphics}
+
+\subsection{Animating drawings using frames}
+
+\frame{
+
+\frametitle{Animating pictures}
+
+As you just saw, you can do some very rudimentary animation of graphics using beamer.
+
+\pause
+\bigskip
+
+There are essentially two ways of doing this:  Using the $\backslash$pause command, or simply using new pages (as in the last slides).
+
+\pause
+\bigskip
+
+Here are some animations I've done:  The first is from a talk about applications of partitions to algebra.
+
+}
+
+\frame{
+
+\frametitle{An example of hook lengths}
+
+A definition by example:
+
+\medskip
+
+Let $\lambda = \{ 5, 3, 2, 1, 1 \}$.
+
+The box $(2, 1)$:
+
+$$\begin{Young}
+\ & \ & \ & \ & \ \cr
+X & \ & \ \cr
+\ & \ \cr
+\ \cr
+\ \cr
+\end{Young}$$
+
+
+
+}
+
+\frame{
+
+\frametitle{An example of hook lengths}
+
+A definition by example:
+
+\medskip
+
+Let $\lambda = \{ 5, 3, 2, 1, 1 \}$.
+
+The hook length of box $(2, 1)$...
+
+$$\begin{Young}
+\ & \ & \ & \ & \ \cr
+--& -- & -- \cr
+l & \ \cr
+l \cr
+l \cr
+\end{Young}$$
+
+
+
+}
+
+\frame{
+
+\frametitle{An example of hook lengths}
+
+A definition by example:
+
+\medskip
+
+Let $\lambda = \{ 5, 3, 2, 1, 1 \}$.
+
+The hook length of box $(2, 1)$... is 6.
+
+$$\begin{Young}
+\ & \ & \ & \ & \ \cr
+6& \ & \ \cr
+\ & \ \cr
+\ \cr
+\ \cr
+\end{Young}$$
+
+
+
+}
+
+\frame{
+
+\frametitle{An example of hook lengths}
+
+A definition by example:
+
+\medskip
+
+Let $\lambda = \{ 5, 3, 2, 1, 1 \}$.
+
+Now we put in all of the hook lengths.
+
+$$\begin{Young}
+9 & 6 & 4 & 2 & 1 \cr
+6& 3 & 1 \cr
+4 & 1 \cr
+2 \cr
+1 \cr
+\end{Young}$$
+
+}
+
+\frame{
+
+\frametitle{How I did that}
+
+Each part of the animation was a whole new slide (obviously I used cut and paste a lot here), though it has the appearance of one slide being animated.
+
+\pause
+\bigskip
+
+The next example was done all on one slide, but with judicious use of the \lq \lq pause" command.
+
+}
+
+\subsection{Animating graphics using \lq \lq pause"}
+
+\frame{
+
+\frametitle{Example}
+
+Let $G = S_4$.  
+
+\setlength{\unitlength}{1cm}
+
+\begin{picture}(7,7)
+
+\put(.8, 6.1){$G \cong S_4$}
+
+\pause
+
+\put(.8, 4.8){$A$}
+\put(.95, 5.1){\line(0,1){.855}}
+\pause
+
+\put(1.5, 5.5){$G/A \cong \Z_2$}
+
+\pause
+
+\put(.8, 3.0){$K$}
+\put(.95, 3.3){\line(0,1){1.45}}
+
+\pause
+
+\put(1.5, 3.8){$A/K \cong \Z_3$}
+
+\pause
+
+\put(.8, 1.0){$1$}
+\put(.95, 1.3){\line(0,1){1.55}}
+
+\pause
+
+\put(1.5, 1.9){$K/1 \cong \Z_2 \times \Z_2$}
+
+\end{picture}
+
+}
+
+\section{Homework}
+
+\subsection{Your first beamer presentation}
+
+\frame{
+
+\frametitle{Exercise 1}
+
+Exercise:  Download and install beamer.  Make a rudimentary beamer presentation, using a title page, sections, subsections, and text animation.
+
+}
+
+\subsection{Pictures}
+
+\frame{
+
+\frametitle{Exercise 2}
+
+Exercise:  (a)  Draw some basic pictures in LaTeX.  (b)  Create some drawings in OpenOffice and import them into LaTeX.  (Warning:  if you do not already have it setup, you may need to create a LaTeX $=>$ PS $=>$ PDF path to get the graphics to come out, which can be a pain.)  (c)  Import some photos into a beamer presentation.
+
+}
+
+\frame{
+
+\frametitle{Exercise 3}
+
+Exercise:  Create a beamer presentation with nontrivial graphical animation.  Make a stick figure that does jumping jacks, for instance.  You could either do this in beamer or in OpenOffice and import it one slide at a time.
+
+}
+
+
+
+\end{document}

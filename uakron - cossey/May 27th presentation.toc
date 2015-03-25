@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Introduction to Beamer}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{LaTeX $+$ Powerpoint = Beamer}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Title page, sections, and subsections}{18}{0}{1}
+\beamer@subsectionintoc {1}{3}{Themes and color schemes}{21}{0}{1}
+\beamer@subsectionintoc {1}{4}{Text effects}{24}{0}{1}
+\beamer@sectionintoc {2}{Pictures in LaTeX}{34}{0}{2}
+\beamer@subsectionintoc {2}{1}{Using macros for pictures}{36}{0}{2}
+\beamer@subsectionintoc {2}{2}{Drawing in LaTeX}{57}{0}{2}
+\beamer@subsectionintoc {2}{3}{Importing into LaTeX}{66}{0}{2}
+\beamer@sectionintoc {3}{Animating graphics}{75}{0}{3}
+\beamer@subsectionintoc {3}{1}{Animating drawings using frames}{75}{0}{3}
+\beamer@subsectionintoc {3}{2}{Animating graphics using ``pause"}{84}{0}{3}
+\beamer@sectionintoc {4}{Homework}{91}{0}{4}
+\beamer@subsectionintoc {4}{1}{Your first beamer presentation}{91}{0}{4}
+\beamer@subsectionintoc {4}{2}{Pictures}{92}{0}{4}
